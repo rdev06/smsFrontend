@@ -1,0 +1,53 @@
+.text-middles{
+    width: 40%;
+    margin: 10px auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a{
+    text-decoration: none;
+}
+
+.centers{
+    width: 100%;
+    color: blue;
+    text-align: center !important;
+}
+
+.color-btn{
+    margin-top: 10px !important;
+    width: 100%;
+    height: 40px !important;
+    background: rgb(0, 60, 255) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-weight: bold;
+}
+
+.color-btns{
+    margin-top: 10px !important;
+    width: 100%;
+    height: 40px !important;
+    background: rgb(0, 255, 85) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-weight: bold;
+}
+
+.QR{
+    width: 100%;
+    height: 300px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+@media(max-width: 768px){
+    .text-middles{
+        width: 90%;
+    }
+}

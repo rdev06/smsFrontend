@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mafset</title>
+
+  <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+
+  <script src="jquery.mobile-1.4.5.js"></script>
+
+</head>
+
+<body>
+
+  <div data-role="page" id="page1">
+
+    <div class="text-middles">
+      <form id="loginForm" target="_blank">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Country Code</label>
+          <input type="number" value="91" name="countryCode" class="form-control" readonly required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email/userName</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" name="identifier" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password" required>
+        </div>
+        <div class="centers">
+          <a href="">Forgot Password</a>
+        </div>
+        <button data-role="none" type="submit" class="btn btn-primary color-btn">LOGIN</button>
+      </form>
+      <a href="#page2"> <button data-role="none" type="submit" class="btn btn-primary color-btns">REGISTER</button></a>
+    </div>
+  </div>
+
+  <div data-role="page" id="page2">
+    <div class="text-middles">
+      <form id="registerForm" target="_blank">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" class="form-control" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text" class="form-control" name=username onkeyup="checkUser(this)" required>
+          <p id="checkUser"></p>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Phone No.</label>
+          <input type="number" class="form-control" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Country Code</label>
+          <input type="number" value="91" name="countryCode" class="form-control" readonly required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Confirm Password</label>
+          <input type="password" class="form-control" name="rpassword" required>
+        </div>
+        <button data-role="none" type="submit" class="btn btn-primary color-btn" disabled
+          id="registerBtn">REGISTER</button>
+      </form><br>
+      Already having Account
+      <a href="#page1"> <button data-role="none" type="submit" class="btn btn-primary color-btns">LOGIN</button></a>
+    </div>
+  </div>
+
+  <!-- <div data-role="page" id="page3">
+    <div class="text-middles">
+      <div class="QR"></div>
+      <form>
+        <div class="form-group">
+          <label>Device ID</label>
+          <input type="text">
+        </div>
+        <button data-role="none" type="submit" class="btn btn-primary color-btn">Add Device</button>
+      </form>
+    </div>
+  </div> -->
+  <div data-role="page" id="page3">
+    <div class="text-middles">
+      <h3 id="name"></h3>
+      <button onclick="logout()">LogOut</button>
+      <button id="enrollSms" class="btn btn-primary color-btns" onclick="enrollSms()">Enroll Now</button>
+      <div id="smsApi">
+        smsToken: <span class="smsToken"></span><br>
+        emailToken: <span class="emailToken"></span><br>
+        Messages Remaining: <span class="nS"></span><br>
+        Email Remaining: <span class="nE"></span><br>
+        Started At: <span class="createdAt"></span><br>
+        Last Updated: <span class="updatedAt"></span><br>
+        <button class="btn btn-primary color-btn">UpdateToken</button>
+      </div>
+    </div>
+  </div>
+  <script src="script/index.js"></script>
+</body>
+
+</html>
