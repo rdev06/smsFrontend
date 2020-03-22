@@ -100,6 +100,9 @@
       <button onclick="logout()">LogOut</button>
       <button id="enrollSms" class="btn btn-primary color-btns" onclick="enrollSms()">Enroll Now</button>
       <div id="smsApi">
+        <input type="number" id="testNumber" minlength="10" maxlength="10">
+        <button onclick="sendMsg()">Send Test Message</button>
+        testApi: <span class="testApi"></span><br><br>
         smsToken: <span class="smsToken"></span><br>
         emailToken: <span class="emailToken"></span><br>
         Messages Remaining: <span class="nS"></span><br>

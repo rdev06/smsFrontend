@@ -1,4 +1,5 @@
 const umsApi = 'https://ums.mafset.com';
+// const umsApi = 'http://localhost:3001';
 const userRoute = '/api/user/';
 const umsApiKey = 'roshanKey';
 let userData = {};
@@ -94,6 +95,9 @@ $('#loginForm').submit(function(e) {
 });
 
 function fillSmsData(data) {
+  $(`#smsApi .testApi`).html(
+    `<strong>${smsApi}/api/sms/${data.smsToken}?to=<Number>&msg=test message</strong>`
+  );
   $(`#smsApi .smsToken`).text(data.smsToken);
   $(`#smsApi .emailToken`).text(data.emailToken);
   $(`#smsApi .nS`).text(data.nS);
@@ -138,6 +142,16 @@ function enrollSms() {
       fillSmsData(d);
     })
     .catch(err => console.log(err));
+}
+
+function sendMsg() {
+  if ($('#testNumber').val().length == 10) {
+    location.href = `${smsApi}/api/sms/${$('.smsToken').text()}?to=${$(
+      '#testNumber'
+    ).val()}&msg=test message`;
+  } else {
+    alert('not a valid number');
+  }
 }
 
 function logout() {
